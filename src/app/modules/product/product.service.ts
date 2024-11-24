@@ -16,7 +16,7 @@ const getAllProdcuts = async (searchTerm?: string) => {
       { type: searchRegex },
     ];
   }
-  const result = await ProductModel.find();
+  const result = await ProductModel.find(filter);
   return result;
 };
 

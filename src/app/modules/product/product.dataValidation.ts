@@ -1,7 +1,5 @@
 import { z } from 'zod';
 
-
-
 // Zod Schema for Product
 export const ProductValidationSchema = z.object({
   name: z.string().min(1, 'Name is required'), // Validates required and non-empty string

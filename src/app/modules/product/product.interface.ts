@@ -1,6 +1,5 @@
 // import mongoose  from "mongoose";
 
-
 export type ProductDetali = {
   name: string;
   brand: string;

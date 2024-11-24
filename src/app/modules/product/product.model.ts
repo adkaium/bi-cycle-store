@@ -57,7 +57,7 @@ productSchema.pre('find', function (next) {
 });
 
 productSchema.pre('find', function (next) {
-  this.find({ isDeleted: { $ne: true } },{new:true});
+  this.find({ isDeleted: { $ne: true } }, { new: true });
   next();
 });
 

@@ -5,9 +5,8 @@ import { ProductValidationSchema } from './product.dataValidation';
 const creatPorduct = async (req: Request, res: Response) => {
   try {
     const product = req.body;
-    // zod validation data 
+    // zod validation data
     const zodParsValidData = ProductValidationSchema.parse(product);
-
 
     const result = await ProductServices.insertProductIntoDB(zodParsValidData);
 
@@ -17,13 +16,13 @@ const creatPorduct = async (req: Request, res: Response) => {
       message: 'Bicycle created successfully',
       data: result,
     });
-  } catch(error:any){
-      res.status(500).json({
-        success: false,
-        message: error.message || 'Something went wrong',
-      });
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Something went wrong',
+    });
   }
-}
+};
 const getsProduts = async (req: Request, res: Response) => {
   try {
     const { searchTerm } = req.query;
@@ -35,11 +34,11 @@ const getsProduts = async (req: Request, res: Response) => {
       message: 'get all Bicycle successfully',
       data: result,
     });
-  } catch (error:any) {
-     res.status(500).json({
-       success: false,
-       message: error.message || 'Something went wrong',
-     });
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Something went wrong',
+    });
   }
 };
 
@@ -59,11 +58,11 @@ const productById = async (req: Request, res: Response) => {
       status: true,
       data: product,
     });
-  } catch (error:any) {
-     res.status(500).json({
-       success: false,
-       message: error.message || 'Something went wrong',
-     });
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Something went wrong',
+    });
   }
 };
 
@@ -87,7 +86,7 @@ const updateProduct = async (req: Request, res: Response) => {
       status: true,
       data: updatedProduct,
     });
-  } catch (error:any) {
+  } catch (error: any) {
     res.status(500).json({
       success: false,
       message: error.message || 'Something went wrong',

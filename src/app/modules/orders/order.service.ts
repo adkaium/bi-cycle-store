@@ -47,5 +47,5 @@ const calculteTotalRevenue = async () => {
 
 export const orderservirce = {
   createOrder,
-  calculteTotalRevenue
+  calculteTotalRevenue,
 };
