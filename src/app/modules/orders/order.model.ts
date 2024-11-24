@@ -5,7 +5,6 @@ const orderSchema = new Schema(
     email: { type: String, required: true },
     product: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Product',
       required: true,
     },
     quantity: { type: Number, required: true },

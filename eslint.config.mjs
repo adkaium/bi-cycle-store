@@ -12,6 +12,8 @@ export default [
   {
     ignores: ['node_modules', 'dist'],
     rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+
       'no-unused-vars': 'error',
       'no-unused-expressions': 'error',
       'prefer-const': 'error',
