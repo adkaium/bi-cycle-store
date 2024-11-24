@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:prod": "node ./dist/server.js",
+    "start": "node ./dist/server.js",
+    "start:prod":"nodemn ./dist/server.js",
     "start:dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
     "lint": "eslint src/**/*.ts",
@@ -20,6 +21,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "mongoose": "^8.8.2",
+    "nodemon": "^3.1.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
