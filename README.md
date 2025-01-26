@@ -28,5 +28,5 @@
 ## Importan Link
 
 - GitHub: https://github.com/adkaium/bi-cycle-store.git
-- Live Link: (https://bi-cycle-store-cyan.vercel.app/)
+- Live Link: https://bi-cycle-store-adkaium-adkaiums-projects.vercel.app/
 - Video Loom Link:https://www.loom.com/share/e86f3385064243a58fc08c9a889d4229?sid=b1826d29-5290-4e99-a2a3-981e5753a21d
