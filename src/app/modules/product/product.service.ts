@@ -1,3 +1,5 @@
+import QueryBuilder from '../../builder/QueryBuilder';
+import { productSearchableFields } from './product.constent';
 import { ProductDetali } from './product.interface';
 import { ProductModel } from './product.model';
 
@@ -6,18 +8,31 @@ const insertProductIntoDB = async (product: ProductDetali) => {
   return result;
 };
 
-const getAllProdcuts = async (searchTerm?: string) => {
-  const filter: any = { isDeleted: false };
-  if (searchTerm) {
-    const searchRegex = new RegExp(searchTerm, 'i');
-    filter.$or = [
-      { name: searchRegex },
-      { brand: searchRegex },
-      { type: searchRegex },
-    ];
-  }
-  const result = await ProductModel.find(filter);
+// const getAllProdcuts = async (searchTerm?: string) => {
+//   const filter: any = { isDeleted: false };
+
+//   if (searchTerm) {
+//     const searchRegex = new RegExp(searchTerm, 'i');
+//     filter.$or = [
+//       { name: searchRegex },
+//       { brand: searchRegex },
+//       { type: searchRegex },
+//     ];
+//   }
+//   const result = await ProductModel.find(filter);
+//   return result;
+// };
+const getAllProdcuts = async (query:Record<string,unknown>) => {
+  const productQuery = new QueryBuilder(
+    ProductModel.find({ isDeleted: false }),query,).search(productSearchableFields)
+      .filter()
+      .sort()
+      .paginate()
+      .fields()
+  const result = await productQuery.modelQuery;
+
   return result;
+  
 };
 
 const getProductById = async (productId: string) => {
